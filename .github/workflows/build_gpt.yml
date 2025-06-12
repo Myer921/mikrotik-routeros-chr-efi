@@ -23,7 +23,7 @@ jobs:
       matrix:
         version:
           # - 6.49.10
-          - 7.16.2
+          - 7.15.3
 
     steps:
       - name: Checkout
@@ -154,10 +154,10 @@ jobs:
       - name: Upload Firmware to release
         uses: ncipollo/release-action@v1
         with:
-          name: ${{matrix.version}}_GPT
+          name: ${{matrix.version}}
           allowUpdates: true
           removeArtifacts: true
-          tag: ${{matrix.version}}_GPT
+          tag: ${{matrix.version}}
           commit: master
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: ./Firmware/*.zip
