@@ -172,10 +172,10 @@ jobs:
       - name: Upload Firmware to release
         uses: ncipollo/release-action@v1
         with:
-          name: ${{matrix.version}}
+          name: ${{matrix.version}}_GPT
           allowUpdates: true
           removeArtifacts: true
-          tag: ${{matrix.version}}
+          tag: ${{matrix.version}}_GPT
           commit: master
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: ./Firmware/*.zip
